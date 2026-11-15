@@ -1,5 +1,6 @@
 {
   "name": "research-paper-distilled",
+  "version": "1.0.0",
   "description": "Turns one research paper or technical web article into a source-verified study guide: worked math, the source's own figures and tables, metrics, limits and key references.",
   "author": {"name": "abhisheksharma026"},
   "license": "MIT",
