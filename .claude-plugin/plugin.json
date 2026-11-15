@@ -1,0 +1,6 @@
+{
+  "name": "research-paper-distilled",
+  "description": "Turns one research paper or technical web article into a source-verified study guide: worked math, the source's own figures and tables, metrics, limits and key references.",
+  "license": "MIT",
+  "keywords": ["research", "papers", "arxiv", "study-guide", "learning"]
+}

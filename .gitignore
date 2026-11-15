@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Personal settings and review history live in ~/.config/research-paper-distilled/, never here.
+config.json

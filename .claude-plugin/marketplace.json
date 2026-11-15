@@ -1,0 +1,14 @@
+{
+  "name": "research-paper-distilled",
+  "description": "The research-paper-distilled skill for Claude Code.",
+  "owner": {
+    "name": "research-paper-distilled maintainers"
+  },
+  "plugins": [
+    {
+      "name": "research-paper-distilled",
+      "source": "./",
+      "description": "Turns one research paper or technical web article into a source-verified study guide."
+    }
+  ]
+}

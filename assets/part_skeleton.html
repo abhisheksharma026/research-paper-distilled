@@ -1,0 +1,80 @@
+<!-- One part of a study guide. build.py joins parts in the order the config lists them.
+     Every part is one <section class="part" id="..."> with exactly one <h2>. Numbered h3 ("3.4 ..."), "Math N." and "MN."
+     headings get link targets automatically, and text such as "Part 3.4", "Math 2", "M7" or "p. 12" becomes a link. -->
+<section class="part" id="p3">
+<h2>Part 3. The results</h2>
+<p class="question">The one question this part answers. This part covers Section 3 [pp. 10&ndash;30].</p>
+
+<!-- Part 1 only: the claim-evidence table, three to six rows. Every [p. N] marker stays in the source for the checks;
+     the build hides it, so the reader sees no page references. -->
+<table class="t">
+<tr><th>Claim</th><th>Supporting result</th><th>Direction and size</th><th>Caveat</th></tr>
+<tr><td>The main claim, in one line.</td><td>The figure or table that supports it.</td><td>The effect, with its numbers.</td><td>The authors' own limit. [p. 5]</td></tr>
+</table>
+
+<h3>3.4 A task family (Section 3.3)</h3>
+
+<!-- A figure or table beside its reading card. Caption copied word for word, with its paper page. -->
+<div class="snap">
+<figure style="margin:0">
+<img src="../snapshots/fig3_4.png" alt="Figure 3.4 from the paper">
+<div class="cap"><b>Figure 3.4 [p. 15]:</b> The caption, word for word.</div>
+</figure>
+<div class="card">
+<ul>
+<li><b>Axes:</b> what x and y measure, and their scale.</li>
+<li><b>Lines:</b> what each series is; reference lines such as SOTA, human or chance.</li>
+<li><b>Pattern:</b> what to notice. <b>Takeaway:</b> one sentence. <b>Caution:</b> the trap, if any.</li>
+</ul>
+</div>
+</div>
+
+<!-- Two images side by side, then a card across the full width (its bullets run in two columns). -->
+<div class="pair">
+<figure style="margin:0"><img src="../snapshots/tab3_4.png" alt="Table 3.4"><div class="cap"><b>Table 3.4 [p. 15]:</b> Caption.</div></figure>
+<figure style="margin:0"><img src="../snapshots/fig3_5.png" alt="Figure 3.5"><div class="cap"><b>Figure 3.5 [p. 16]:</b> Caption.</div></figure>
+</div>
+<div class="card wide">
+<ul><li><b>The task:</b> one sentence.</li><li><b>Results:</b> the key numbers with their comparison.</li></ul>
+</div>
+
+<!-- A real dataset item, quoted from the paper (the prompt-format appendix when there is one). -->
+<div class="ex"><span class="exh">Dataset name (Figure A.3) [p. 21]</span>The context, shortened with ... where long.
+<b>→ the correct answer</b>  ✗ a wrong option</div>
+
+<!-- Model math that explains the mechanism stays in its part. Metric math goes in the final metric section. -->
+<div class="box math">
+<h4>Math 3. What the formula computes</h4>
+<math display="block"><mi>C</mi><mo>&asymp;</mo><mn>6</mn><mi>N</mi><mi>D</mi></math>
+<p>Each symbol in words, then a worked example with real numbers.</p>
+<p style="margin:0"><b>Why:</b> why the authors chose this, and what it gains.</p>
+</div>
+
+<!-- A warning or a distinction the reader must not miss. -->
+<div class="box note"><h4>Do not confuse two meanings of a term</h4><p style="margin:0">One sentence each.</p></div>
+
+<!-- Every part ends with reflection questions and their answers. -->
+<div class="check">
+<h4>Questions to reflect on</h4>
+<ol>
+<li>A question about a trade-off, an assumption or what would change. <span class="a">The answer, with its page.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- The metric section: one card per metric. A metric already explained in a part gets a one-line pointer instead. -->
+<section class="part" id="metrics">
+<h2>Every metric in the paper</h2>
+<h3>A group of metrics</h3>
+<div class="metrics">
+<div class="card">
+<h4>M1. Metric name</h4>
+<math display="block"><mtext>metric</mtext><mo>=</mo><mfrac><mtext>numerator</mtext><mtext>denominator</mtext></mfrac></math>
+<ul>
+<li><b>Used for:</b> which benchmarks, with pages.</li>
+<li><b>By hand:</b> a small example a reader can compute.</li>
+<li><b>Why:</b> why this metric for this task. <b>Trap:</b> the common misreading.</li>
+</ul>
+</div>
+</div>
+</section>

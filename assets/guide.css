@@ -1,0 +1,76 @@
+@page {
+  size: A4;
+  margin: 12mm 12mm 14mm 12mm;
+  @bottom-left { content: "{{FOOTER}}"; font: 7.5pt Helvetica, Arial, sans-serif; color: #77777f; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt Helvetica, Arial, sans-serif; color: #77777f; }
+}
+:root { --ink: #1d1d22; --muted: #5d5d68; --line: #d9dce3; --paper: #ffffff; --math-bg: #f1f5fb; --math-edge: #4f72b0; --card-bg: #f8f6ef; --card-edge: #a08f5c; --note-bg: #fff5e8; --note-edge: #c9822c; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 9.6pt/1.42 "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 9.2pt; line-height: 1.38; }
+h1 { font-size: 18pt; line-height: 1.2; margin: 0 0 3pt; }
+h2 { margin: 0 0 3pt; padding-bottom: 2pt; border-bottom: 1.4pt solid var(--ink); break-after: avoid; font-size: 13pt; }
+h3 { break-after: avoid; font-size: 10.2pt; margin: 7pt 0 2.5pt; }
+h4 { margin: 0 0 3pt; font-size: 8.4pt; letter-spacing: .05em; text-transform: uppercase; }
+p { margin: 0 0 4.5pt; }
+ul, ol { margin: 0 0 5pt; padding-left: 15pt; }
+li { margin-bottom: 1.5pt; }
+code, .mono { font-family: Menlo, "Courier New", monospace; font-size: 8.4pt; }
+.question { font-style: italic; color: var(--muted); margin-bottom: 6pt; }
+.part { margin-top: 10pt; }
+.box { break-inside: avoid; font-size: 8.7pt; padding: 4pt 7pt; margin: 4pt 0 6pt; }
+.box.math { background: var(--math-bg); border-left: 3pt solid var(--math-edge); }
+.box.math h4 { color: #34507f; }
+.box.note { background: var(--note-bg); border-left: 3pt solid var(--note-edge); }
+.box.note h4 { color: #8a5518; }
+math[display="block"] { font-size: 10pt; margin: 2pt 0 3pt; }
+.snap { display: grid; gap: 9pt; align-items: start; break-inside: avoid; grid-template-columns: 45% 1fr; margin: 4pt 0 6pt; }
+.snap.wide { grid-template-columns: 1fr; }
+.snap.narrow { grid-template-columns: 40% 1fr; }
+.snap img { display: block; width: 100%; border: 0.5pt solid var(--line); }
+.snap.wide img { width: 82%; margin: 0 auto; }
+.cap { color: var(--muted); margin-top: 3pt; font-size: 7.1pt; line-height: 1.3; }
+.cap b { color: var(--ink); }
+.card { background: var(--card-bg); border-left: 3pt solid var(--card-edge); font-size: 8.2pt; padding: 4pt 6pt; }
+.card h4 { color: #6a5a2c; }
+.card ul { padding-left: 11pt; margin: 0; }
+table.t { width: 100%; border-collapse: collapse; font-size: 8.2pt; margin: 4pt 0 7pt; break-inside: avoid; }
+table.t th, table.t td { border-bottom: 0.5pt solid var(--line); padding: 2.4pt 4pt; text-align: left; vertical-align: top; }
+table.t th { background: #eceef3; font-weight: 600; }
+table.t td:first-child { font-weight: 600; }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 7pt; margin: 4pt 0 7pt; }
+.metrics .card { break-inside: avoid; }
+.check { border-top: 1pt dashed #b9bcc6; padding-top: 5pt; break-inside: avoid; font-size: 8.4pt; margin-top: 6pt; }
+.check ol { padding-left: 14pt; }
+.check .a { color: var(--muted); }
+.toc { margin: 6pt 0 0; font-size: 9.2pt; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc li { display: flex; gap: 4pt; }
+.toc li .dots { flex: 1; border-bottom: 0.6pt dotted #9a9aa6; margin-bottom: 3pt; }
+.toc ol { list-style: none; padding-left: 0; }
+.toc ol ol { padding-left: 12pt; font-size: 8.8pt; }
+.small { font-size: 8pt; color: var(--muted); }
+section.newpage { break-before: page; margin-top: 0; }
+.question { break-after: avoid; }
+.box.math { break-inside: auto; } .box.math h4 { break-after: avoid; } .box.math math[display="block"], .box.math p { break-inside: avoid; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; align-items: start; margin: 4pt 0 6pt; break-inside: avoid; }
+.pair img { display: block; width: 100%; border: 0.5pt solid var(--line); }
+.card.wide { margin: 0 0 7pt; break-inside: avoid; }
+.card.wide ul { columns: 2; column-gap: 14pt; }
+.card.wide li { break-inside: avoid; }
+.ex { font-family: Menlo, "Courier New", monospace; font-size: 7.3pt; line-height: 1.35; background: #f1f1f4; border-left: 2pt solid #9a9aa6; padding: 3pt 6pt; margin: 3pt 0 5pt; white-space: pre-wrap; break-inside: avoid; }
+.exgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8pt; }
+.exgrid .ex { margin: 2pt 0 4pt; }
+.exh { display: block; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 7.4pt; color: var(--muted); margin-bottom: 1pt; }
+table.ex-t { font-size: 7.4pt; }
+table.ex-t td { padding: 1.8pt 4pt; }
+table.sb { font-size: 7.3pt; break-inside: auto; }
+table.sb tr, table.long tr { break-inside: avoid; }
+table.long { break-inside: auto; }
+table.sb th, table.sb td { padding: 1.5pt 3pt; }
+table.sb td:first-child { font-weight: 600; }
+table.sb tr.fam td { background: #eceef3; font-weight: 700; font-size: 7.2pt; }
+.g-beat { color: #1f6b3f; font-weight: 700; }
+.g-comp { color: #2f5ea8; font-weight: 700; }
+.g-behind { color: #a03a1e; font-weight: 700; }
+a.pg, a.ref { color: #2f5ea8; text-decoration: none; }
+section.compact .card { font-size: 8.1pt; padding: 4pt 6pt; } section.compact .card ul { padding-left: 10pt; } section.compact math[display="block"] { font-size: 9.6pt; } section.compact .metrics { gap: 5pt; margin: 2pt 0 4pt; } section.compact h3 { margin: 4pt 0 2pt; }
