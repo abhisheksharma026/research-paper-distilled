@@ -10,6 +10,48 @@ The skill handles three kinds of source:
 - **Tutorials**: a blog post or lecture notes that teach an existing technique.
 - **Engineering posts**: a company blog post about its own system, outage or setup, such as a post on load balancing, system design or DevOps. These use the mechanism, incident or how-to mode.
 
+## Architecture
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Helvetica, Arial, sans-serif", "fontSize": "16px", "lineColor": "#111827", "edgeLabelBackground": "#ffffff", "primaryTextColor": "#0b1220"}, "htmlLabels": false, "flowchart": {"htmlLabels": false, "curve": "basis", "nodeSpacing": 36, "rankSpacing": 56, "padding": 12}}}%%
+flowchart LR
+    IN["Paper"] --> ORC
+    USER(["You"]) <-. "approve plan, pilot, review" .-> ORC
+    CFG[("Local Config")] --> ORC
+
+    subgraph SKILL["Paper Distiller"]
+        ORC["Orchestrator"]
+        CTX[("Shared Context")]
+        PW@{ shape: procs, label: "Part Writers" }
+        CP["Check Part"]
+        CC["Check Claims"]
+        LOC["Locator"]
+        RD["Read and Write Bullets"]
+        GC["Guide Checks"]
+    end
+
+    ORC -- "brief and plan" --> CTX
+    ORC -- "one per part" --> PW
+    PW --> CP --> CC
+    CTX --> PW
+    PW -- "hand-back" --> CTX
+    ORC --> LOC --> RD --> CC
+    LOC -- "download" --> CW[("Cited Works")]
+    ORC --> GC --> OUT["Study Guide"]
+    ORC -. "full depth or on request" .-> REV["Independent Reviewer"]
+    PW --> SM["Main Model"]
+    RD --> SM
+    LOC -.-> LM["Lighter Model"]
+
+    classDef ext fill:#5cc8f7,stroke:#2b9ad1,stroke-width:1.5px,color:#0b1220,font-weight:bold
+    classDef int fill:#6fcf73,stroke:#3f9f45,stroke-width:1.5px,color:#0b1220,font-weight:bold
+    classDef person fill:#ffffff,stroke:#2b9ad1,stroke-width:2px,color:#0b1220,font-weight:bold
+    class IN,OUT,CFG,CW,REV,SM,LM ext
+    class ORC,CTX,PW,CP,CC,LOC,RD,GC int
+    class USER person
+    style SKILL fill:#ffffff,stroke:#111827,stroke-width:2px,stroke-dasharray:3 5,color:#dc2626
+```
+
 ## Requirements
 
 | Tool | Used for | Check |
